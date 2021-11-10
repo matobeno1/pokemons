@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   extends: [
       "next/core-web-vitals",
       "plugin:react-hooks/recommended",
