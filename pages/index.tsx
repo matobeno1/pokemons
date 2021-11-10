@@ -1,10 +1,10 @@
-import type { NextPage, GetStaticProps } from "next"
+import type { NextPage, GetStaticProps } from "next";
 
 import { fetchPokemonsRequest } from "../src/requests";
 
 type HomePageProps = {
     pokemons: string[];
-}
+};
 
 const Home: NextPage<HomePageProps> = ({
     pokemons,
@@ -15,16 +15,16 @@ const Home: NextPage<HomePageProps> = ({
             <div key={pokemon}>{pokemon}</div>
         ))}
     </div>
-)
+);
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
     // TODO env limit 9
-    const { results } = await fetchPokemonsRequest(9)
+    const { results } = await fetchPokemonsRequest(9);
     return {
         props: {
             pokemons: results.map(({ name }) => name)
         }
-    }
-}
+    };
+};
 
-export default Home
+export default Home;
