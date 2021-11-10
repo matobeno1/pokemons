@@ -34,6 +34,7 @@ module.exports = {
         "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
         "eol-last": ["error", "always"],
         "object-curly-spacing": "off",
-        "@typescript-eslint/object-curly-spacing": ["error", "always"]
+        "@typescript-eslint/object-curly-spacing": ["error", "always"],
+        "react/prop-types": "off",
     }
 };
