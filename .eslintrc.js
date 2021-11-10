@@ -36,5 +36,7 @@ module.exports = {
         "object-curly-spacing": "off",
         "@typescript-eslint/object-curly-spacing": ["error", "always"],
         "react/prop-types": "off",
+        "semi": "off",
+        "@typescript-eslint/semi": ["error"]
     }
 };
