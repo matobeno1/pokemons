@@ -30,6 +30,10 @@ module.exports = {
     ],
     rules: {
         "quotes": "off",
-        "@typescript-eslint/quotes": ["error", "double"]
+        "@typescript-eslint/quotes": ["error", "double"],
+        "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
+        "eol-last": ["error", "always"],
+        "object-curly-spacing": "off",
+        "@typescript-eslint/object-curly-spacing": ["error", "always"]
     }
 };
