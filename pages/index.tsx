@@ -1,5 +1,7 @@
 import type { NextPage, GetStaticProps } from "next"
 
+import {fetchPokemonsRequest} from "../src/requests";
+
 type HomePageProps = {
     pokemons: string[];
 }
@@ -11,8 +13,13 @@ const Home: NextPage<HomePageProps> = () => (
 )
 
 export const getStaticProps: GetStaticProps = async () => {
-    const data = await fetch("https://pokeapi.co/api/v2/pokemon?limit=9")
-        .then(res => res.json())
+    // TODO env limit 9
+    const data = await fetchPokemonsRequest(9)
+    return {
+        props: {
+
+        }
+    }
 }
 
 export default Home
