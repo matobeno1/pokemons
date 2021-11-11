@@ -4,7 +4,6 @@ import { FetchPokemonRequestResponseType, FetchPokemonsRequestResponseType } fro
 
 const axios = Axios.create({
     baseURL: "https://pokeapi.co/api/v2",
-    adapter
 });
 
 export const fetchPokemonsRequest = (limit: number, offset = 0) => (

@@ -37,17 +37,29 @@ export const getStaticPaths: GetStaticPaths<PokemonDetailPageUrlQuery> = async (
     };
 };
 
+const INT_REGEX = /^\d+$/;
+
 export const getStaticProps: GetStaticProps<PokemonDetailPageProps, PokemonDetailPageUrlQuery> = async ({ params }) => {
     if (!params) {
         throw new Error("[PokemonDetailPage] No params provided.");
     }
-    const { data: pokemon } = await fetchPokemonRequest(params.name);
-    return {
-        props: {
-            pokemon
-        },
-        revalidate: false
-    };
+    const { name } = params;
+    try {
+        const { data: pokemon } = await fetchPokemonRequest(name);
+        return name && INT_REGEX.test(name) ? ({
+            redirect: {
+                permanent: true,
+                destination: `/pokemon/${pokemon.name}`
+            }
+        }) : ({
+            props: {
+                pokemon
+            },
+            revalidate: false
+        });
+    } catch (e) {
+        return { notFound: true };
+    }
 };
 
 export default PokemonDetailPage;
