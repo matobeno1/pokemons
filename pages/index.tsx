@@ -3,7 +3,8 @@ import Link from "next/link";
 
 import { fetchPokemonsRequest } from "@src/requests";
 import { createClassNames } from "@src/bem";
-import {POKEMONS_PRELOAD_COUNT} from "@src/constants";
+import { POKEMONS_PRELOAD_COUNT } from "@src/constants";
+import { PokemonCardComponent } from "@src/components";
 
 const classes = createClassNames("Home");
 
@@ -18,9 +19,11 @@ const Home: NextPage<HomePageProps> = ({
     <div className={classes()}>
       <h1 className={classes("title")}>Pokemons</h1>
         {pokemons.map(pokemon => (
-            <div key={pokemon} >
-                <Link href={`/pokemon/${pokemon}`}>{pokemon}</Link>
-            </div>
+            <PokemonCardComponent
+                key={pokemon}
+                name={pokemon}
+                href={`/pokemon/${pokemon}`}
+            />
         ))}
     </div>
 );
