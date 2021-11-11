@@ -1,4 +1,6 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
+import Image from "next/image";
+
 import { Pokemon } from "../../types";
 import { createClassNames } from "../../bem";
 
@@ -13,8 +15,8 @@ export const PokemonCardComponent: FunctionComponent<PokemonCardComponentProps> 
 }) => {
     return (
         <div className={classNames()}>
-            <img className={classNames("image")} src="" alt=""/>
-            <div className={classNames("body")}>
+            <Image className={classNames("image")} src="" alt=""/>
+            <div className={classNames("title")}>
                 {pokemon}
             </div>
             <button>View</button>
