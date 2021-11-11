@@ -1,7 +1,6 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { useRouter } from "next/router";
-import { fetchPokemonRequest, fetchPokemonsRequest } from "../src/requests";
-import { Pokemon } from "../src/types";
+import { fetchPokemonRequest, fetchPokemonsRequest } from "../../src/requests";
+import type { Pokemon } from "../../src/types";
 
 type PokemonDetailPageProps = {
     pokemon: Pokemon | null;
@@ -14,15 +13,15 @@ type PokemonDetailPageUrlQuery = {
 const PokemonDetailPage: NextPage<PokemonDetailPageProps> = ({
     pokemon
 }) => {
-    const router = useRouter();
-    const { name } = router.query;
-    return (
+    return pokemon ? (
         <div>
-            <h1>{name}</h1>
+            <h1>{pokemon.name}</h1>
             <pre>
-                {pokemon?.id}
+                {pokemon.id}
             </pre>
         </div>
+    ) : (
+        <div>Loading...</div>
     );
 };
 
@@ -46,7 +45,8 @@ export const getStaticProps: GetStaticProps<PokemonDetailPageProps, PokemonDetai
     return {
         props: {
             pokemon
-        }
+        },
+        revalidate: false
     };
 };
 

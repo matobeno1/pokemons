@@ -15,7 +15,7 @@ const Home: NextPage<HomePageProps> = ({
       <h1>Pokemons</h1>
         {pokemons.map(pokemon => (
             <div key={pokemon} >
-                <Link href={pokemon}>{pokemon}</Link>
+                <Link href={`/pokemon/${pokemon}`}>{pokemon}</Link>
             </div>
         ))}
     </div>
