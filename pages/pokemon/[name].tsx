@@ -19,11 +19,14 @@ const PokemonDetailPage: NextPage<PokemonDetailPageProps> = ({
 }) => {
     const colorName = pokemon?.color.name;
     return pokemon ? (
-        <div className={classNames()} style={{ backgroundColor: colorName }}>
-            <h1>{pokemon.name}</h1>
-            <pre>
+        <div className={classNames()} >
+            <div className={classNames("backdrop")} style={{ backgroundColor: colorName }} />
+            <div>
+                <h1>{pokemon.name}</h1>
+                <pre>
                 {pokemon.id}
             </pre>
+            </div>
         </div>
     ) : (
         <div>Loading...</div>
