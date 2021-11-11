@@ -1,7 +1,7 @@
 import type { NextPage, GetStaticProps } from "next";
 import Link from "next/link";
 
-import { fetchPokemonsRequest } from "../src/requests";
+import { fetchPokemonsRequest } from "@src/requests";
 
 type HomePageProps = {
     /** Pokemon names. */

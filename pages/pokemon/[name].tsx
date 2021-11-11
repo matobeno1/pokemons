@@ -1,6 +1,6 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { fetchPokemonRequest, fetchPokemonsRequest } from "../../src/requests";
-import type { Pokemon } from "../../src/types";
+import { fetchPokemonRequest, fetchPokemonsRequest } from "@src/requests";
+import type { Pokemon } from "@src/types";
 
 type PokemonDetailPageProps = {
     pokemon: Pokemon | null;
