@@ -1,8 +1,10 @@
 import type { NextPage, GetStaticProps } from "next";
+import Link from "next/link";
 
 import { fetchPokemonsRequest } from "../src/requests";
 
 type HomePageProps = {
+    /** Pokemon names. */
     pokemons: string[];
 };
 
@@ -12,7 +14,9 @@ const Home: NextPage<HomePageProps> = ({
     <div>
       <h1>Pokemons</h1>
         {pokemons.map(pokemon => (
-            <div key={pokemon}>{pokemon}</div>
+            <div key={pokemon} >
+                <Link href={pokemon}>{pokemon}</Link>
+            </div>
         ))}
     </div>
 );
