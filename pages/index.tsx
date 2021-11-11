@@ -2,6 +2,9 @@ import type { NextPage, GetStaticProps } from "next";
 import Link from "next/link";
 
 import { fetchPokemonsRequest } from "@src/requests";
+import { createClassNames } from "@src/bem";
+
+const classes = createClassNames("Home");
 
 type HomePageProps = {
     /** Pokemon names. */
@@ -11,8 +14,8 @@ type HomePageProps = {
 const Home: NextPage<HomePageProps> = ({
     pokemons,
 }) => (
-    <div>
-      <h1>Pokemons</h1>
+    <div className={classes()}>
+      <h1 className={classes("title")}>Pokemons</h1>
         {pokemons.map(pokemon => (
             <div key={pokemon} >
                 <Link href={`/pokemon/${pokemon}`}>{pokemon}</Link>
