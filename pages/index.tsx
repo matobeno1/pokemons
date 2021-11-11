@@ -5,7 +5,7 @@ import { createClassNames } from "@src/bem";
 import { POKEMONS_PRELOAD_COUNT } from "@src/constants";
 import { PokemonCardComponent } from "@src/components";
 
-const classes = createClassNames("Home");
+const classes = createClassNames("home-page");
 
 type HomePageProps = {
     /** Pokemon names. */

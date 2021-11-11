@@ -1,7 +1,8 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { fetchPokemonRequest, fetchPokemonsRequest } from "@src/requests";
 import type { Pokemon } from "@src/types";
+import { fetchPokemonRequest, fetchPokemonsRequest } from "@src/requests";
 import { INTEGER_REGEX, POKEMONS_PRELOAD_COUNT } from "@src/constants";
+import {createClassNames} from "@src/bem";
 
 type PokemonDetailPageProps = {
     pokemon: Pokemon | null;
@@ -11,12 +12,14 @@ type PokemonDetailPageUrlQuery = {
     name: string
 };
 
+const classNames = createClassNames("pokemon-name-page");
+
 const PokemonDetailPage: NextPage<PokemonDetailPageProps> = ({
     pokemon
 }) => {
     const colorName = pokemon?.color.name;
     return pokemon ? (
-        <div style={{ backgroundColor: colorName }}>
+        <div className={classNames()} style={{ backgroundColor: colorName }}>
             <h1>{pokemon.name}</h1>
             <pre>
                 {pokemon.id}
