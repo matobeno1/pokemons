@@ -1,6 +1,7 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { fetchPokemonRequest, fetchPokemonsRequest } from "@src/requests";
 import type { Pokemon } from "@src/types";
+import { INTEGER_REGEX, POKEMONS_PRELOAD_COUNT } from "@src/constants";
 
 type PokemonDetailPageProps = {
     pokemon: Pokemon | null;
@@ -26,7 +27,7 @@ const PokemonDetailPage: NextPage<PokemonDetailPageProps> = ({
 };
 
 export const getStaticPaths: GetStaticPaths<PokemonDetailPageUrlQuery> = async () => {
-    const { data } = await fetchPokemonsRequest(9);
+    const { data } = await fetchPokemonsRequest(POKEMONS_PRELOAD_COUNT);
     return {
         paths: data.results.map(({ name }) => ({
             params: {
@@ -37,8 +38,6 @@ export const getStaticPaths: GetStaticPaths<PokemonDetailPageUrlQuery> = async (
     };
 };
 
-const INT_REGEX = /^\d+$/;
-
 export const getStaticProps: GetStaticProps<PokemonDetailPageProps, PokemonDetailPageUrlQuery> = async ({ params }) => {
     if (!params) {
         throw new Error("[PokemonDetailPage] No params provided.");
@@ -46,7 +45,7 @@ export const getStaticProps: GetStaticProps<PokemonDetailPageProps, PokemonDetai
     const { name } = params;
     try {
         const { data: pokemon } = await fetchPokemonRequest(name);
-        return name && INT_REGEX.test(name) ? ({
+        return name && INTEGER_REGEX.test(name) ? ({
             redirect: {
                 permanent: true,
                 destination: `/pokemon/${pokemon.name}`

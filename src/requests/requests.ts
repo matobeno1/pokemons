@@ -3,7 +3,7 @@ import Axios from "axios";
 import { FetchPokemonRequestResponseType, FetchPokemonsRequestResponseType } from "./types";
 
 const axios = Axios.create({
-    baseURL: "https://pokeapi.co/api/v2",
+    baseURL: process.env.API_ROOT,
 });
 
 export const fetchPokemonsRequest = (limit: number, offset = 0) => (

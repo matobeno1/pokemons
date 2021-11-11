@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { fetchPokemonsRequest } from "@src/requests";
 import { createClassNames } from "@src/bem";
+import {POKEMONS_PRELOAD_COUNT} from "@src/constants";
 
 const classes = createClassNames("Home");
 
@@ -25,8 +26,7 @@ const Home: NextPage<HomePageProps> = ({
 );
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
-    // TODO env limit 9
-    const { data } = await fetchPokemonsRequest(9);
+    const { data } = await fetchPokemonsRequest(POKEMONS_PRELOAD_COUNT);
     return {
         props: {
             pokemons: data.results.map(({ name }) => name)
