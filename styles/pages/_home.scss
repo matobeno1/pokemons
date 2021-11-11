@@ -1,3 +1,9 @@
+@import "styles/breakpoints";
+
 .Home {
   background-color: aliceblue;
+
+  @include sm {
+    background-color: black;
+  }
 }

@@ -5,7 +5,6 @@ $font-weights: (
   "xl": 1280px,
 );
 
-
 // Small devices
 @mixin sm {
   @media (min-width: #{map-get($font-weights, "sm")}) {
