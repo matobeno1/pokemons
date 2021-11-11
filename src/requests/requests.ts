@@ -1,13 +1,21 @@
+import Axios from "axios";
+
 import { FetchPokemonRequestResponseType, FetchPokemonsRequestResponseType } from "./types";
 
-// TODO env API ROOT
+const axios = Axios.create({
+    baseURL: "https://pokeapi.co/api/v2",
+    adapter
+});
 
 export const fetchPokemonsRequest = (limit: number, offset = 0) => (
-    fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offest=${offset}`)
-        .then<FetchPokemonsRequestResponseType>(res => res.json())
+    axios.get<FetchPokemonsRequestResponseType>("pokemon",{
+        params: {
+            limit,
+            offset,
+        }
+    })
 );
 
-export const fetchPokemonRequest = (name: string) => (
-    fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
-        .then<FetchPokemonRequestResponseType>(res => res.json())
+export const fetchPokemonRequest = (id: string | number) => (
+    axios.get<FetchPokemonRequestResponseType>(`pokemon/${id}`)
 );

@@ -23,10 +23,10 @@ const Home: NextPage<HomePageProps> = ({
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
     // TODO env limit 9
-    const { results } = await fetchPokemonsRequest(9);
+    const { data } = await fetchPokemonsRequest(9);
     return {
         props: {
-            pokemons: results.map(({ name }) => name)
+            pokemons: data.results.map(({ name }) => name)
         }
     };
 };

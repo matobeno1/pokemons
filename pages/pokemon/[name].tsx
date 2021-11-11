@@ -26,7 +26,7 @@ const PokemonDetailPage: NextPage<PokemonDetailPageProps> = ({
 };
 
 export const getStaticPaths: GetStaticPaths<PokemonDetailPageUrlQuery> = async () => {
-    const data = await fetchPokemonsRequest(9);
+    const { data } = await fetchPokemonsRequest(9);
     return {
         paths: data.results.map(({ name }) => ({
             params: {
@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps<PokemonDetailPageProps, PokemonDetai
     if (!params) {
         throw new Error("[PokemonDetailPage] No params provided.");
     }
-    const pokemon = await fetchPokemonRequest(params.name);
+    const { data: pokemon } = await fetchPokemonRequest(params.name);
     return {
         props: {
             pokemon
