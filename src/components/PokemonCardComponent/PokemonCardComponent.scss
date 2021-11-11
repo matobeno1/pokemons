@@ -1,5 +1,12 @@
 .pokemon-card-component {
+  display: flex;
+  flex-direction: row;
+  padding: var(--spacing-1);
+  margin-bottom: var(--spacing-3);
+  border: 1px solid black;
+  background-color: lightblue;
+
   &__title {
-    background: blue; // TODO
+    font-weight: 600;
   }
 }

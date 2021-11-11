@@ -16,7 +16,7 @@ const Home: NextPage<HomePageProps> = ({
     pokemonNames,
 }) => (
     <div className={classes()}>
-      <h1 className={classes("title")}>Pokemons</h1>
+      <h1 className={classes("title")}>Pokedex</h1>
         {pokemonNames.map(pokemon => (
             <PokemonCardComponent
                 key={pokemon}
