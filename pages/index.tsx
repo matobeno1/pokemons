@@ -1,5 +1,4 @@
 import type { NextPage, GetStaticProps } from "next";
-import Link from "next/link";
 
 import { fetchPokemonsRequest } from "@src/requests";
 import { createClassNames } from "@src/bem";

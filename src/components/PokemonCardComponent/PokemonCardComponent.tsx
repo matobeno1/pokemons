@@ -17,7 +17,7 @@ export const PokemonCardComponent: FunctionComponent<PokemonCardComponentProps> 
 }) => {
     return (
         <div className={classNames()}>
-            <Image className={classNames("image")} src="" alt=""/>
+            {/*<Image className={classNames("image")} src="" alt=""/>*/}
             <div className={classNames("title")}>
                 {name}
             </div>
