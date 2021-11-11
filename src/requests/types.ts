@@ -8,3 +8,7 @@ export type FetchPokemonsRequestResponseType = Readonly<{
 }>;
 
 export type FetchPokemonRequestResponseType = Pokemon;
+
+export type FetchPokemonColorRequestResponseType = {
+    name: string;
+};

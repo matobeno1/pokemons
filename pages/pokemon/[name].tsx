@@ -14,8 +14,9 @@ type PokemonDetailPageUrlQuery = {
 const PokemonDetailPage: NextPage<PokemonDetailPageProps> = ({
     pokemon
 }) => {
+    const colorName = pokemon?.color.name;
     return pokemon ? (
-        <div>
+        <div style={{ backgroundColor: colorName }}>
             <h1>{pokemon.name}</h1>
             <pre>
                 {pokemon.id}

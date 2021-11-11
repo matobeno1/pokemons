@@ -3,4 +3,7 @@ export type Pokemon = {
     name: string;
     weight: number
     height: number,
+    color: {
+        name: string
+    },
 };
