@@ -10,15 +10,15 @@ const classes = createClassNames("Home");
 
 type HomePageProps = {
     /** Pokemon names. */
-    pokemons: string[];
+    pokemonNames: string[];
 };
 
 const Home: NextPage<HomePageProps> = ({
-    pokemons,
+    pokemonNames,
 }) => (
     <div className={classes()}>
       <h1 className={classes("title")}>Pokemons</h1>
-        {pokemons.map(pokemon => (
+        {pokemonNames.map(pokemon => (
             <PokemonCardComponent
                 key={pokemon}
                 name={pokemon}
@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
     const { data } = await fetchPokemonsRequest(POKEMONS_PRELOAD_COUNT);
     return {
         props: {
-            pokemons: data.results.map(({ name }) => name)
+            pokemonNames: data.results.map(({ name }) => name)
         }
     };
 };
