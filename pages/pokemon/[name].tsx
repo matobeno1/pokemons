@@ -1,8 +1,9 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import type { Pokemon } from "@src/types";
 import { fetchPokemonRequest, fetchPokemonsRequest } from "@src/requests";
-import { INTEGER_REGEX, POKEMONS_PRELOAD_COUNT } from "@src/constants";
-import {createClassNames} from "@src/bem";
+import { INTEGER_REGEX, POKEMONS_PRELOAD_COUNT, SPRITES_ROOT } from "@src/constants";
+import { createClassNames } from "@src/bem";
+import { getSpriteUrl } from "@src/utils";
 
 type PokemonDetailPageProps = {
     pokemon: Pokemon | null;
@@ -23,6 +24,7 @@ const PokemonDetailPage: NextPage<PokemonDetailPageProps> = ({
             <div className={classNames("backdrop")} style={{ backgroundColor: colorName }} />
             <div>
                 <h1>{pokemon.name}</h1>
+                <img src={getSpriteUrl(pokemon.id)} alt=""/>
                 <pre>
                 {pokemon.id}
             </pre>

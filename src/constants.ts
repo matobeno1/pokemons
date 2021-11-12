@@ -2,3 +2,5 @@
 export const POKEMONS_PRELOAD_COUNT: number = parseInt(process.env.POKEMONS_PRELOAD_COUNT ?? "9");
 
 export const INTEGER_REGEX = /^\d+$/;
+
+export const SPRITES_ROOT = process.env.SPRITES_ROOT;
