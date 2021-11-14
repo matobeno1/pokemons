@@ -20,21 +20,23 @@ export const PokemonCardComponent: FunctionComponent<PokemonCardComponentProps> 
     color,
 }) => {
     return (
-        <div className={classNames()} >
-            <div className={classNames("backdrop")} style={{ backgroundColor: color }} />
-            {imageSrc && (
-                <Image
-                    className={classNames("image")}
-                    src={imageSrc}
-                    alt={name}
-                    width={100}
-                    height={100}
-                />
-            )}
-            <div className={classNames("title")}>
-                {name}
-            </div>
-            <Link href={href}>View</Link>
-        </div>
+        <Link href={href} passHref>
+            <a className={classNames()} tabIndex={0}>
+                <div className={classNames("backdrop")} style={{ backgroundColor: color }} />
+                {imageSrc && (
+                    <Image
+                        className={classNames("image")}
+                        src={imageSrc}
+                        alt={name}
+                        width={100}
+                        height={100}
+                    />
+                )}
+                <div className={classNames("title")}>
+                    {name}
+                </div>
+
+            </a>
+        </Link>
     );
 };

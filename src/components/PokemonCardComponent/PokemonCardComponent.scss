@@ -1,14 +1,27 @@
+@import "styles/mixins";
+
 .pokemon-card-component {
   display: flex;
   flex-direction: row;
   padding: var(--spacing-1);
-  border: 1px solid black;
-  background-color: lightblue;
   border-radius: var(--border-radius);
   position: relative;
+  cursor: pointer;
+
+  @include transition(box-shadow, 200ms);
+  @include box-shadow(2);
+
+  &:hover, &:focus {
+    @include box-shadow(6);
+  }
+
+  &:focus {
+    outline: none;
+  }
 
   &__backdrop {
     filter: brightness(150%) opacity(50%);
+    border-radius: var(--border-radius);
     position: absolute;
     left: 0;
     right: 0;
