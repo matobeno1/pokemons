@@ -5,6 +5,17 @@
   border: 1px solid black;
   background-color: lightblue;
   border-radius: var(--border-radius);
+  position: relative;
+
+  &__backdrop {
+    filter: brightness(150%) opacity(50%);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: -1;
+  }
 
   &__title {
     font-weight: 600;
