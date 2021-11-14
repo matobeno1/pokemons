@@ -23,6 +23,9 @@ export const PokemonCardComponent: FunctionComponent<PokemonCardComponentProps> 
         <Link href={href} passHref>
             <a className={classNames()} tabIndex={0}>
                 <div className={classNames("backdrop")} style={{ backgroundColor: color }} />
+                <span className={classNames("title")}>
+                    {name}
+                </span>
                 {imageSrc && (
                     <Image
                         className={classNames("image")}
@@ -32,10 +35,6 @@ export const PokemonCardComponent: FunctionComponent<PokemonCardComponentProps> 
                         height={100}
                     />
                 )}
-                <div className={classNames("title")}>
-                    {name}
-                </div>
-
             </a>
         </Link>
     );

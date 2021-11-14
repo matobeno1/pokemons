@@ -1,13 +1,25 @@
 @import "styles/breakpoints";
 
 .home-page {
-  margin: 0 var(--spacing-5);
+  margin: var(--spacing-5);
 
-  &__title {}
+  @include lg {
+    margin: 0;
+    padding-bottom: var(--spacing-3);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    text-align: center;
+    font-weight: 700;
+  }
 
   &__listing {
     --columns: 2;
-    --grid-gap: var(--spacing-2);
+    --grid-gap: var(--spacing-3);
 
     display: grid;
     grid-template-columns: repeat(var(--columns), 1fr);

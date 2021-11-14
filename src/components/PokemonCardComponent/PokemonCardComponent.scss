@@ -1,10 +1,12 @@
 @import "styles/mixins";
 
 .pokemon-card-component {
-  display: flex;
-  flex-direction: row;
   padding: var(--spacing-1);
+  padding-top: var(--spacing-3);
+  padding-bottom: var(--spacing-2);
   border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
   position: relative;
   cursor: pointer;
 
@@ -31,6 +33,25 @@
   }
 
   &__title {
+    --title-size: var(--font-size-xs);
+    color: var(--color-text);
     font-weight: 600;
+    font-size: var(--title-size);
+    text-align: center;
+    padding-bottom: var(--spacing-3);
+    display: block;
+    text-transform: capitalize;
+
+    @include md() {
+      --title-size: var(--font-size-md);
+    }
+
+    @include lg() {
+      --title-size: var(--font-size-lg);
+    }
+  }
+
+  &__image {
+    padding: var(--spacing-1);
   }
 }

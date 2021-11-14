@@ -11,6 +11,7 @@ html {
 }
 
 body {
+  background-color: #ffffff;
   max-width: 960px;
   margin: auto;
 }
@@ -24,11 +25,19 @@ a {
   box-sizing: border-box;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  margin-top: 0;
+}
+
 :root {
   --spacing-1: 0.25rem;
   --spacing-2: 0.50rem;
   --spacing-3: 0.75rem;
   --spacing-4: 1rem;
   --spacing-5: 1.25rem;
+  --color-text: #fff;
+  --font-size-xs: 1.1rem;
+  --font-size-md: 1.3rem;
+  --font-size-lg: 1.5rem;
   --border-radius: var(--spacing-3)
 }
