@@ -26,6 +26,7 @@ const Home: NextPage<HomePageProps> = ({
                     name={pokemon.name}
                     href={`/pokemon/${pokemon.name}`}
                     imageSrc={getSpriteUrl(pokemon.id)}
+                    color={pokemon.color.name}
                 />
             ))}
         </div>
@@ -34,6 +35,7 @@ const Home: NextPage<HomePageProps> = ({
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
     const requests = await Promise.all(
+        // Creates array of pokemon IDs and fetches data about each pokemon.
         Array.from(Array(POKEMONS_PRELOAD_COUNT).keys()).map((id) => {
             return fetchPokemonRequest(id + 1);
         })
