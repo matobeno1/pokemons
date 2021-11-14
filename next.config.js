@@ -8,5 +8,12 @@ module.exports = {
     domains: [
       new URL(process.env.SPRITES_ROOT).host
     ]
-  }
+  },
+  redirects: async () => [
+    {
+      source: "/pokemon",
+      destination: "/",
+      permanent: true,
+    },
+  ]
 };
