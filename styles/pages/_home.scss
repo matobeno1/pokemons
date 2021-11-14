@@ -1,11 +1,13 @@
 @import "styles/breakpoints";
 
 .home-page {
+  margin: 0 var(--spacing-5);
+
   &__title {}
 
   &__listing {
     --columns: 2;
-    --grid-gap: var(--spacing-1);
+    --grid-gap: var(--spacing-2);
 
     display: grid;
     grid-template-columns: repeat(var(--columns), 1fr);
@@ -13,12 +15,13 @@
 
     @include sm {
       --columns: 2;
-      --grid-gap: var(--spacing-2);
+      --grid-gap: var(--spacing-3);
+      margin: unset;
     }
 
     @include md {
       --columns: 3;
-      --grid-gap: var(--spacing-3);
+      --grid-gap: var(--spacing-4);
     }
   }
 }
