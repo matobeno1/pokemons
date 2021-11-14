@@ -19,23 +19,20 @@ const classNames = createClassNames("pokemon-name-page");
 
 const PokemonDetailPage: NextPage<PokemonDetailPageProps> = ({
     pokemon
-}) => {
-    const colorName = pokemon?.color.name;
-    return pokemon ? (
-        <div className={classNames()} >
-            <div className={classNames("backdrop")} style={{ backgroundColor: colorName }} />
-            <div>
-                <h1>{pokemon.name}</h1>
-                <Image src={getSpriteUrl(pokemon.id)} alt={pokemon.name} width={300} height={300} />
-                <pre>
+}) => pokemon ? (
+    <div className={classNames()} >
+        <div className={classNames("backdrop")} style={{ backgroundColor: pokemon.color.name }} />
+        <div>
+            <h1>{pokemon.name}</h1>
+            <Image src={getSpriteUrl(pokemon.id)} alt={pokemon.name} width={300} height={300} />
+            <pre>
                 {pokemon.id}
             </pre>
-            </div>
         </div>
-    ) : (
-        <div>Loading...</div>
-    );
-};
+    </div>
+) : (
+    <div>Loading...</div>
+);
 
 export const getStaticPaths: GetStaticPaths<PokemonDetailPageUrlQuery> = async () => {
     const { data } = await fetchPokemonsRequest(POKEMONS_PRELOAD_COUNT);

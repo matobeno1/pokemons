@@ -1,6 +1,6 @@
 import type { NextPage, GetStaticProps } from "next";
 
-import { fetchPokemonsRequest } from "@src/requests";
+import { fetchPokemonRequest, fetchPokemonsRequest } from "@src/requests";
 import { createClassNames } from "@src/bem";
 import { POKEMONS_PRELOAD_COUNT } from "@src/constants";
 import { PokemonCardComponent } from "@src/components";
@@ -9,13 +9,9 @@ import { getSpriteUrl } from "@src/utils";
 
 const classes = createClassNames("home-page");
 
-type PokemonObjectType = Pick<Pokemon, "name"> & {
-    id: number
-};
-
 type HomePageProps = {
     /** Pokemon names. */
-    pokemons: PokemonObjectType[];
+    pokemons: Pokemon[];
 };
 
 const Home: NextPage<HomePageProps> = ({
@@ -37,13 +33,16 @@ const Home: NextPage<HomePageProps> = ({
 );
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
-    const { data } = await fetchPokemonsRequest(POKEMONS_PRELOAD_COUNT);
+    const requests = await Promise.all(
+        Array.from(Array(POKEMONS_PRELOAD_COUNT).keys()).map((id) => {
+            return fetchPokemonRequest(id + 1);
+        })
+    );
+    const pokemons: Pokemon[] = requests.map(request => request.data);
+
     return {
         props: {
-            pokemons: data.results.map(({ name }, i) => ({
-                name,
-                id: i + 1
-            }))
+            pokemons,
         }
     };
 };
