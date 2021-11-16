@@ -1,11 +1,9 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import Image from "next/image";
 
 import type { Pokemon } from "@src/types";
 import { fetchPokemonRequest, fetchPokemonsRequest } from "@src/requests";
 import { INTEGER_REGEX, POKEMONS_PRELOAD_COUNT } from "@src/constants";
-import { createClassNames } from "@src/bem";
-import { getSpriteUrl } from "@src/utils";
+import { PokemonDetailComponent } from "@src/components";
 
 type PokemonDetailPageProps = {
     pokemon: Pokemon | null;
@@ -15,21 +13,10 @@ type PokemonDetailPageUrlQuery = {
     name: string
 };
 
-const classNames = createClassNames("pokemon-name-page");
-
 const PokemonDetailPage: NextPage<PokemonDetailPageProps> = ({
     pokemon
 }) => pokemon ? (
-    <div className={classNames()} >
-        <div className={classNames("backdrop")} style={{ backgroundColor: pokemon.color.name }} />
-        <div>
-            <h1>{pokemon.name}</h1>
-            <Image src={getSpriteUrl(pokemon.id)} alt={pokemon.name} width={300} height={300} />
-            <pre>
-                {pokemon.id}
-            </pre>
-        </div>
-    </div>
+    <PokemonDetailComponent pokemon={pokemon} />
 ) : (
     <div>Loading...</div>
 );
