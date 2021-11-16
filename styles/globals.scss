@@ -13,7 +13,7 @@
   --font-size-md: 1.3rem;
   --font-size-lg: 1.5rem;
   --border-radius: var(--spacing-3);
-  --html-background-color: yellow;
+  --html-background-color: #fff;
 }
 
 html {
@@ -24,9 +24,21 @@ html {
 }
 
 body {
-  max-width: 960px;
-  margin: auto;
-  background-color: var(--html-background-color);
+  position: relative;
+  margin: 0;
+
+  & .backdrop {
+    background-color: var(--html-background-color);
+    width: 100%;
+    @include backdrop;
+    @include background-filter;
+    transition: background-color 150ms;
+  }
+
+  & .content {
+    max-width: 960px;
+    margin: auto;
+  }
 }
 
 a {

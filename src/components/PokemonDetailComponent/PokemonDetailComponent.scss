@@ -2,14 +2,6 @@
 
 .pokemon-detail-component {
   height: 100vh;
-  position: relative;
-
-
-  &__backdrop {
-    @include backdrop;
-    @include background-filter;
-    background-color: var(--background-color);
-  }
 
   &__heading {
     color: var(--color-text)
