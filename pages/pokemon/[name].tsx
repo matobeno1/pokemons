@@ -4,6 +4,7 @@ import type { Pokemon } from "@src/types";
 import { fetchPokemonRequest, fetchPokemonsRequest } from "@src/requests";
 import { INTEGER_REGEX, POKEMONS_PRELOAD_COUNT } from "@src/constants";
 import { PokemonDetailComponent } from "@src/components";
+import Head from "next/head";
 
 type PokemonDetailPageProps = {
     pokemon: Pokemon | null;
@@ -16,7 +17,15 @@ type PokemonDetailPageUrlQuery = {
 const PokemonDetailPage: NextPage<PokemonDetailPageProps> = ({
     pokemon
 }) => pokemon ? (
-    <PokemonDetailComponent pokemon={pokemon} />
+    <>
+        <Head >
+            <title>{pokemon.name}</title>
+            <style>
+                {`:root {--html-background-color: ${pokemon.color.name} !important;}`}
+            </style>
+        </Head>
+        <PokemonDetailComponent pokemon={pokemon} />
+    </>
 ) : (
     <div>Loading...</div>
 );

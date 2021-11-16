@@ -1,13 +1,28 @@
+@import "styles/mixins";
+
 .pokemon-detail-component {
+  height: 100vh;
   position: relative;
 
+
   &__backdrop {
-    filter: brightness(150%) opacity(50%);
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    z-index: -1;
+    @include backdrop;
+    @include background-filter;
+    background-color: var(--background-color);
+  }
+
+  &__heading {
+    color: var(--color-text)
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__card {
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 0 var(--spacing-5);
   }
 }
