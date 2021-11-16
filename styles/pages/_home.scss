@@ -23,7 +23,12 @@
 
     display: grid;
     grid-template-columns: repeat(var(--columns), 1fr);
+
     grid-gap: var(--grid-gap);
+
+    & > * {
+      aspect-ratio: 1;
+    }
 
     @include sm {
       --columns: 2;

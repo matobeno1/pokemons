@@ -1,3 +1,4 @@
+@import "styles/mixins";
 
 .pokemon-detail-component {
   height: 100vh;
@@ -17,6 +18,7 @@
   }
 
   &__card {
+    @include box-shadow(6);
     padding-top: 5vh;
     position: relative;
     margin-top: var(--image-height);

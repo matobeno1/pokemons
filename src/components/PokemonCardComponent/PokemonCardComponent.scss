@@ -48,6 +48,8 @@
 
   &__image {
     display: flex;
+    position: relative;
+    flex-grow: 1;
     justify-content: center;
     padding: var(--spacing-1);
   }

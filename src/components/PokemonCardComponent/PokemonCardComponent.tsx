@@ -31,8 +31,7 @@ export const PokemonCardComponent: FunctionComponent<PokemonCardComponentProps> 
                         <Image
                             src={imageSrc}
                             alt={name}
-                            height="100%"
-                            width="100%"
+                            layout="fill"
                         />
                     )}
                 </div>

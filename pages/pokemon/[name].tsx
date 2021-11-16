@@ -21,7 +21,7 @@ const PokemonDetailPage: NextPage<PokemonDetailPageProps> = ({
         <Head >
             <title>{pokemon.name}</title>
             <style>
-                {`:root {--html-background-color: ${pokemon.color.name} !important;}`}
+                {`:root {--html-background-color: ${pokemon.color.name === "white" ? "gray" : pokemon.color.name} !important;}`}
             </style>
         </Head>
         <PokemonDetailComponent pokemon={pokemon} />
