@@ -1,10 +1,12 @@
-import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import type { GetStaticPaths, GetStaticProps } from "next";
+import Head from "next/head";
 
 import type { Pokemon } from "@src/types";
 import { fetchPokemonRequest, fetchPokemonsRequest } from "@src/requests";
 import { INTEGER_REGEX, POKEMONS_PRELOAD_COUNT } from "@src/constants";
 import { PokemonDetailComponent } from "@src/components";
-import Head from "next/head";
+import { NextPageWithLayout } from "@src/types";
+import { navigationLayout } from "@src/layouts";
 
 type PokemonDetailPageProps = {
     pokemon: Pokemon | null;
@@ -14,7 +16,7 @@ type PokemonDetailPageUrlQuery = {
     name: string
 };
 
-const PokemonDetailPage: NextPage<PokemonDetailPageProps> = ({
+const PokemonDetailPage: NextPageWithLayout<PokemonDetailPageProps> = ({
     pokemon
 }) => pokemon ? (
     <>
@@ -64,5 +66,7 @@ export const getStaticProps: GetStaticProps<PokemonDetailPageProps, PokemonDetai
         return { notFound: true };
     }
 };
+
+PokemonDetailPage.getLayout = navigationLayout;
 
 export default PokemonDetailPage;

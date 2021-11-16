@@ -10,11 +10,11 @@ class MyDocument extends Document {
             <Html>
                 <Head />
                 <body>
-                <div className="backdrop"/>
-                <div className="content">
-                    <Main />
-                </div>
-                <NextScript />
+                    <div className="backdrop"/>
+                    <div className="content">
+                        <Main />
+                    </div>
+                    <NextScript />
                 </body>
             </Html>
         );
