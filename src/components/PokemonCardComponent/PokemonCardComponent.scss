@@ -47,6 +47,8 @@
   }
 
   &__image {
+    display: flex;
+    justify-content: center;
     padding: var(--spacing-1);
   }
 }

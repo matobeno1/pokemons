@@ -26,15 +26,16 @@ export const PokemonCardComponent: FunctionComponent<PokemonCardComponentProps> 
                 <span className={classNames("title")}>
                     {name}
                 </span>
-                {imageSrc && (
-                    <Image
-                        className={classNames("image")}
-                        src={imageSrc}
-                        alt={name}
-                        width={100}
-                        height={100}
-                    />
-                )}
+                <div className={classNames("image")}>
+                    {imageSrc && (
+                        <Image
+                            src={imageSrc}
+                            alt={name}
+                            height="100%"
+                            width="100%"
+                        />
+                    )}
+                </div>
             </a>
         </Link>
     );

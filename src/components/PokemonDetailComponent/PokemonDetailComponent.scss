@@ -28,7 +28,7 @@
 
   &__image {
     position: absolute;
-    width: 100vw;
+    width: 100%;
     height: var(--image-height);
     top: calc((var(--image-height) - var(--image-offset))*-1)
   }
