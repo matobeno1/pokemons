@@ -17,21 +17,23 @@ export const PokemonDetailComponent: FunctionComponent<PokemonDetailComponentPro
     return (
         <div className={classNames()} style={style}>
             <div className={classNames("backdrop")} />
-            <div className={classNames("heading")}>
-                <h1>{pokemon.name}</h1>
-            </div>
-            <div className={classNames("image")}>
-                <Image
-                    src={getSpriteUrl(pokemon.id)}
-                    alt={pokemon.name}
-                    width={300}
-                    height={300}
-                />
-            </div>
             <div className={classNames("card")}>
-            <pre>
-                {pokemon.id}
-            </pre>
+                <div className={classNames("image")}>
+                    <Image
+                        src={getSpriteUrl(pokemon.id)}
+                        alt={pokemon.name}
+                        draggable={false}
+                        layout="fill"
+                    />
+                </div>
+                <div className={classNames("description")}>
+                    <div className={classNames("heading")}>
+                        <h1>{pokemon.name}</h1>
+                    </div>
+                    <pre>
+                        {pokemon.id}
+                    </pre>
+                </div>
             </div>
         </div>
     );

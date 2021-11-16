@@ -1,20 +1,39 @@
-@import "styles/mixins";
 
 .pokemon-detail-component {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5vh;
+  --image-height: 20vh;
+  --image-offset: 5vh;
 
   &__heading {
-    color: var(--color-text)
-  }
+    color: var(--color-text-inverse);
+    text-align: center;
 
-  &__image {
-    display: flex;
-    justify-content: center;
+    :first-child {
+      margin-bottom: 0;
+    }
   }
 
   &__card {
+    padding-top: 5vh;
+    position: relative;
+    margin-top: var(--image-height);
     height: 100%;
     background-color: #ffffff;
-    border-radius: 0 var(--spacing-5);
+    border-top-left-radius: var(--spacing-5);
+    border-top-right-radius: var(--spacing-5);
+  }
+
+  &__image {
+    position: absolute;
+    width: 100vw;
+    height: var(--image-height);
+    top: calc((var(--image-height) - var(--image-offset))*-1)
+  }
+
+  &__description {
+    margin-top: 1rem;
   }
 }
