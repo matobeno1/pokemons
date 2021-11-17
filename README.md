@@ -26,3 +26,5 @@ the numerical ID in the URL, that's why the pokemon name first has to be fetched
 the user is redirected to a detail page with the name of pokemon in the URL.
   - we could optimise this by creating an object at build time with key-pair values (key = pokemon ID, value = name of pokemon)
   and then using it for redirects without the need of fetching the name from external resource. 
+- Split CSS per page/component - at this moment there's one stylesheet with component's CSS.
+  - possible to fix by using CSS modules.
