@@ -3,6 +3,11 @@ module.exports = {
         "browser": true,
         "es2021": true
     },
+    plugins: [
+        "react",
+        "@typescript-eslint",
+        "jsx-a11y"
+    ],
     extends: [
         "eslint:recommended",
         "next/core-web-vitals",
@@ -10,6 +15,7 @@ module.exports = {
         "plugin:react-hooks/recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:react/jsx-runtime",
+        "plugin:jsx-a11y/recommended",
     ],
     parser: "@typescript-eslint/parser",
     parserOptions: {
@@ -24,10 +30,6 @@ module.exports = {
             version: "detect",
         },
     },
-    plugins: [
-        "react",
-        "@typescript-eslint"
-    ],
     rules: {
         "quotes": "off",
         "@typescript-eslint/quotes": ["error", "double"],

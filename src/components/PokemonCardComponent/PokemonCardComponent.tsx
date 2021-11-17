@@ -21,7 +21,7 @@ export const PokemonCardComponent: FunctionComponent<PokemonCardComponentProps> 
 }) => {
     return (
         <Link href={href} passHref>
-            <a className={classNames()} tabIndex={0}>
+            <div role="link" className={classNames()} tabIndex={0}>
                 <div className={classNames("backdrop")} style={{ backgroundColor: color }} />
                 <span className={classNames("title")}>
                     {name}
@@ -35,7 +35,7 @@ export const PokemonCardComponent: FunctionComponent<PokemonCardComponentProps> 
                         />
                     )}
                 </div>
-            </a>
+            </div>
         </Link>
     );
 };
