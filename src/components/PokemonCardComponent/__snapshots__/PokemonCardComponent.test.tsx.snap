@@ -1,28 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PokemonCardComponent snapshots 1`] = `
-<a
-  className="pokemon-card-component"
+<link
   href="/pokemons/bulbasaur"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  tabIndex={0}
+  passHref={true}
 >
-  <div
-    className="pokemon-card-component__backdrop"
-    style={
-      Object {
-        "backgroundColor": undefined,
-      }
-    }
-  />
-  <span
-    className="pokemon-card-component__title"
+  <a
+    className="pokemon-card-component"
+    tabIndex={0}
   >
-    bulbasaur
-  </span>
-  <div
-    className="pokemon-card-component__image"
-  />
-</a>
+    <div
+      className="pokemon-card-component__backdrop"
+      style={
+        Object {
+          "backgroundColor": undefined,
+        }
+      }
+    />
+    <span
+      className="pokemon-card-component__title"
+    >
+      bulbasaur
+    </span>
+    <div
+      className="pokemon-card-component__image"
+    />
+  </a>
+</link>
 `;
