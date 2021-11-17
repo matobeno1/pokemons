@@ -1,5 +1,4 @@
-import React from "react";
-import { act, create, ReactTestRenderer } from "react-test-renderer";
+import { act, create } from "react-test-renderer";
 import { LoaderComponent } from "./LoaderComponent";
 
 describe(LoaderComponent, () => {
