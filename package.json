@@ -11,12 +11,14 @@
     "@bem-react/classname": "1.5.12",
     "axios": "0.24.0",
     "invariant": "2.2.4",
+    "lodash.upperfirst": "4.3.1",
     "next": "12.0.3",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
     "@types/invariant": "2.2.35",
+    "@types/lodash.upperfirst": "4.3.6",
     "@types/node": "16.11.7",
     "@types/react": "17.0.34",
     "@typescript-eslint/eslint-plugin": "5.3.1",

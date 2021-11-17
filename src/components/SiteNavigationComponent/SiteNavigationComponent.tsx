@@ -13,7 +13,7 @@ export const SiteNavigationComponent: FunctionComponent = () => (
                     <Image src="/pokeball.svg" layout="fill" alt="logo" />
                 </span>
                 <span className={classNames("back-text")}>
-                    Pokedex
+                    Pokédex
                 </span>
             </a>
         </Link>

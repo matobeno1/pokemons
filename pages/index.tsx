@@ -1,8 +1,9 @@
 import type { NextPage, GetStaticProps } from "next";
+import Head from "next/head";
 
 import { fetchPokemonRequest } from "@src/requests";
 import { createClassNames } from "@src/bem";
-import { POKEMONS_PRELOAD_COUNT } from "@src/constants";
+import { APP_TITLE, POKEMONS_PRELOAD_COUNT } from "@src/constants";
 import { PokemonCardComponent } from "@src/components";
 import { Pokemon } from "@src/types";
 import { getSpriteUrl } from "@src/utils";
@@ -17,18 +18,23 @@ type HomePageProps = {
 const Home: NextPage<HomePageProps> = ({
     pokemons,
 }) => (
-    <div className={classes()}>
-        <h1 className={classes("title")}>Pokedex</h1>
-        <div className={classes("listing")}>
-            {pokemons.map(pokemon => (
-                <PokemonCardComponent
-                    key={pokemon.name}
-                    name={pokemon.name}
-                    href={`/pokemon/${pokemon.name}`}
-                    imageSrc={getSpriteUrl(pokemon.id)}
-                    color={pokemon.color.name}
-                />
-            ))}
+    <div>
+        <Head>
+            <title>{APP_TITLE}</title>
+        </Head>
+        <div className={classes()}>
+            <h1 className={classes("title")}>Pokédex</h1>
+            <div className={classes("listing")}>
+                {pokemons.map(pokemon => (
+                    <PokemonCardComponent
+                        key={pokemon.name}
+                        name={pokemon.name}
+                        href={`/pokemon/${pokemon.name}`}
+                        imageSrc={getSpriteUrl(pokemon.id)}
+                        color={pokemon.color.name}
+                    />
+                ))}
+            </div>
         </div>
     </div>
 );

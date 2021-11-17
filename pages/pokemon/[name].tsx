@@ -1,9 +1,10 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
+import upperFirst from "lodash.upperfirst";
 
 import type { Pokemon } from "@src/types";
 import { fetchPokemonDetailsRequest, fetchPokemonRequest, fetchPokemonsRequest } from "@src/requests";
-import { INTEGER_REGEX, POKEMONS_PRELOAD_COUNT } from "@src/constants";
+import { APP_TITLE, INTEGER_REGEX, POKEMONS_PRELOAD_COUNT } from "@src/constants";
 import { PokemonDetailComponent, LoaderComponent } from "@src/components";
 import { NextPageWithLayout } from "@src/types";
 import { navigationLayout } from "@src/layouts";
@@ -21,7 +22,7 @@ const PokemonDetailPage: NextPageWithLayout<PokemonDetailPageProps> = ({
 }) => pokemon ? (
     <>
         <Head >
-            <title>{pokemon.name}</title>
+            <title>{APP_TITLE} - {upperFirst(pokemon.name)}</title>
             <style>
                 {`:root {--html-background-color: ${pokemon.color.name === "white" ? "gray" : pokemon.color.name ?? "gray"} !important;}`}
             </style>

@@ -4,3 +4,5 @@ export const POKEMONS_PRELOAD_COUNT: number = parseInt(process.env.POKEMONS_PREL
 export const INTEGER_REGEX = /^\d+$/;
 
 export const SPRITES_ROOT = process.env.SPRITES_ROOT;
+
+export const APP_TITLE = "Pokémon app";
