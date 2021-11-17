@@ -2,7 +2,7 @@ import type { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 
 import type { Pokemon } from "@src/types";
-import { fetchPokemonRequest, fetchPokemonsRequest } from "@src/requests";
+import { fetchPokemonDetailsRequest, fetchPokemonRequest, fetchPokemonsRequest } from "@src/requests";
 import { INTEGER_REGEX, POKEMONS_PRELOAD_COUNT } from "@src/constants";
 import { PokemonDetailComponent, LoaderComponent } from "@src/components";
 import { NextPageWithLayout } from "@src/types";
@@ -48,7 +48,20 @@ export const getStaticProps: GetStaticProps<PokemonDetailPageProps, PokemonDetai
     }
     const { name } = params;
     try {
-        const { data: pokemon } = await fetchPokemonRequest(name);
+        const [{ data: pokemonData }, { data: pokemonDetail }] = await Promise.all([
+            fetchPokemonRequest(name),
+            fetchPokemonDetailsRequest(name)
+        ]);
+        const { id, name: pokemonName, color } = pokemonData;
+        const { weight, height } = pokemonDetail;
+        const pokemon: Pokemon = {
+            id,
+            name: pokemonName,
+            color,
+            weight,
+            height
+        };
+
         return name && INTEGER_REGEX.test(name) ? ({
             redirect: {
                 permanent: true,

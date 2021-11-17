@@ -1,5 +1,3 @@
-import { Pokemon } from "../types";
-
 export type FetchPokemonsRequestResponseType = Readonly<{
     results: Array<{
         name: string,
@@ -7,4 +5,15 @@ export type FetchPokemonsRequestResponseType = Readonly<{
     }>
 }>;
 
-export type FetchPokemonRequestResponseType = Pokemon;
+export type FetchPokemonRequestResponseType = {
+    id: string;
+    name: string;
+    color: {
+        name: string
+    },
+};
+
+export type FetchPokemonDetailsRequestResponseType = {
+    height: number;
+    weight: number;
+};

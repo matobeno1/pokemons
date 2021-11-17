@@ -19,7 +19,7 @@
 
   &__card {
     @include box-shadow(6);
-    padding-top: 5vh;
+    padding: 5vh 2rem 0 2rem;
     position: relative;
     margin-top: var(--image-height);
     height: 100%;
@@ -32,10 +32,16 @@
     position: absolute;
     width: 100%;
     height: var(--image-height);
-    top: calc((var(--image-height) - var(--image-offset))*-1)
+    top: calc((var(--image-height) - var(--image-offset))*-1);
+    left: 50%;
+    transform: translate(-50%, 0);
   }
 
   &__description {
     margin-top: 1rem;
+  }
+
+  &__heading {
+    text-transform: capitalize;
   }
 }

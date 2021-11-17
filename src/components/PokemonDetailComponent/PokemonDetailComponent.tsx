@@ -14,6 +14,7 @@ export const PokemonDetailComponent: FunctionComponent<PokemonDetailComponentPro
     pokemon
 }) => {
     const style = { "--background-color": pokemon.color.name } as CSSProperties;
+    const { height, weight } = pokemon;
     return (
         <div className={classNames()} style={style}>
             <div className={classNames("backdrop")} />
@@ -28,11 +29,17 @@ export const PokemonDetailComponent: FunctionComponent<PokemonDetailComponentPro
                 </div>
                 <div className={classNames("description")}>
                     <div className={classNames("heading")}>
-                        <h1>{pokemon.name}</h1>
+                        <h1>{pokemon.name} - #{String(pokemon.id).padStart(3, "0")}</h1>
                     </div>
-                    <pre>
-                        {pokemon.id}
-                    </pre>
+
+                    <div>
+                        <h2>Basic information</h2>
+                        <b>Weight: </b>
+                        <span>{weight}</span>
+                        <br/>
+                        <b>Height: </b>
+                        <span>{height}</span>
+                    </div>
                 </div>
             </div>
         </div>

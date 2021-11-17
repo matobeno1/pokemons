@@ -1,6 +1,7 @@
 import Axios from "axios";
 
 import {
+    FetchPokemonDetailsRequestResponseType,
     FetchPokemonRequestResponseType,
     FetchPokemonsRequestResponseType
 } from "./types";
@@ -20,4 +21,8 @@ export const fetchPokemonsRequest = (limit: number, offset = 0) => (
 
 export const fetchPokemonRequest = (id: string | number) => (
     axios.get<FetchPokemonRequestResponseType>(`pokemon-species/${id}`)
+);
+
+export const fetchPokemonDetailsRequest = (id: string | number) => (
+    axios.get<FetchPokemonDetailsRequestResponseType>(`pokemon/${id}`)
 );
