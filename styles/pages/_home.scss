@@ -14,7 +14,16 @@
 
   &__title {
     text-align: center;
+    font-size: 2rem;
     font-weight: 700;
+
+    @include md() {
+      font-size: 3rem;
+    }
+
+    @include lg() {
+      font-size: 4rem;
+    }
   }
 
   &__listing {

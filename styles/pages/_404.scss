@@ -1,0 +1,33 @@
+.page-404 {
+  margin: 0 var(--spacing-5);
+  position: relative;
+  height: 100vh;
+  --title-size: 6rem;
+
+  &__content {
+    position: relative;
+    text-align: center;
+    top: 38.2%
+  }
+
+  &__title-404 {
+    text-align: center;
+  }
+
+  &__image {
+    position: relative;
+    height: var(--title-size);
+    width: var(--title-size);
+    display: inline-block;
+  }
+
+  &__letter {
+    vertical-align: text-bottom;
+    font-weight: 700;
+    font-size: var(--title-size);
+  }
+
+  &__link {
+    text-decoration: underline;
+  }
+}
