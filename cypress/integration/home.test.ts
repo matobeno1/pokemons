@@ -11,5 +11,3 @@ describe("Homepage", () => {
             .should("have.class", "pokemon-card-component");
     });
 });
-
-export {};
