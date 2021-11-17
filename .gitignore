@@ -37,3 +37,7 @@ yarn-error.log*
 *.tsbuildinfo
 
 .idea
+
+cypress/videos
+*.mp4
+*.png

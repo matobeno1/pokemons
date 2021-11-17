@@ -6,8 +6,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest && ",
-    "test:integration": "start-server-and-test start http://localhost:3000 cypress",
+    "test": "jest && test:cypress-headless",
+    "test:cypress": "start-server-and-test start http://localhost:3000 cypress",
+    "test:cypress-headless": "start-server-and-test start http://localhost:3000 cypress:headless",
     "cypress": "cypress open",
     "cypress:headless": "cypress run"
   },
