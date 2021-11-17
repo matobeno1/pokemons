@@ -6,6 +6,7 @@ import {
     FetchPokemonsRequestResponseType
 } from "./types";
 
+/** Axios instance with configured API root. */
 const axios = Axios.create({
     baseURL: process.env.API_ROOT,
 });

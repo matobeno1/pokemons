@@ -17,7 +17,7 @@ export type Pokemon = {
 export type LayoutFunction = (page: ReactElement) => ReactNode;
 
 /** Augmented {@link NextPage} with `getLayout` function. */
-export type NextPageWithLayout<P = {}> = NextPage<P> & {
+export type NextPageWithLayout<P = Record<string, unknown>> = NextPage<P> & {
     getLayout?: LayoutFunction
 };
 

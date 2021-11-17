@@ -42,9 +42,7 @@ const Home: NextPage<HomePageProps> = ({
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
     const requests = await Promise.all(
         // Creates array of pokemon IDs and fetches data about each pokemon.
-        Array.from(Array(POKEMONS_PRELOAD_COUNT).keys()).map((id) => {
-            return fetchPokemonRequest(id + 1);
-        })
+        Array.from(Array(POKEMONS_PRELOAD_COUNT).keys()).map((id) => fetchPokemonRequest(id + 1))
     );
     const pokemons: Pokemon[] = requests.map(request => request.data);
 

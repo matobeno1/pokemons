@@ -1,11 +1,10 @@
 import { SiteNavigationComponent } from "../components";
 import { LayoutFunction } from "../types";
 
-export const navigationLayout: LayoutFunction = (page) => {
-    return (
-        <>
-            <SiteNavigationComponent />
-            <main>{page}</main>
-        </>
-    );
-};
+/** Function that wraps Next page and renders layout with navigation. */
+export const navigationLayout: LayoutFunction = (page) => (
+    <>
+        <SiteNavigationComponent />
+        <main>{page}</main>
+    </>
+);

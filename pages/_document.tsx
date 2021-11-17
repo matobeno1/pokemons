@@ -1,6 +1,7 @@
 import Document, { DocumentContext, Head, Html, Main, NextScript } from "next/document";
 
-class MyDocument extends Document {
+/** Main document class that renders Next pages with additional markup. */
+class MainDocument extends Document {
     static async getInitialProps(ctx: DocumentContext) {
         return await Document.getInitialProps(ctx);
     }
@@ -21,4 +22,4 @@ class MyDocument extends Document {
     }
 }
 
-export default MyDocument;
+export default MainDocument;
