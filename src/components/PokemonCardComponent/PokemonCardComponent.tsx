@@ -21,7 +21,8 @@ export const PokemonCardComponent: FunctionComponent<PokemonCardComponentProps> 
 }) => {
     return (
         <Link href={href} passHref>
-            <div role="link" className={classNames()} tabIndex={0}>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+            <a role="link" className={classNames()} tabIndex={0}>
                 <div className={classNames("backdrop")} style={{ backgroundColor: color }} />
                 <span className={classNames("title")}>
                     {name}
@@ -35,7 +36,7 @@ export const PokemonCardComponent: FunctionComponent<PokemonCardComponentProps> 
                         />
                     )}
                 </div>
-            </div>
+            </a>
         </Link>
     );
 };
