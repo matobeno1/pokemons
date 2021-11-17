@@ -1,6 +1,6 @@
 import type { NextPage, GetStaticProps } from "next";
 
-import { fetchPokemonRequest, fetchPokemonsRequest } from "@src/requests";
+import { fetchPokemonRequest } from "@src/requests";
 import { createClassNames } from "@src/bem";
 import { POKEMONS_PRELOAD_COUNT } from "@src/constants";
 import { PokemonCardComponent } from "@src/components";
