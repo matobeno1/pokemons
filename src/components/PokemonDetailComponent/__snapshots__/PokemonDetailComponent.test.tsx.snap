@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PokemonDetailComponent snapshots 1`] = `
+<div
+  className="pokemon-detail-component"
+  style={
+    Object {
+      "--background-color": "green",
+    }
+  }
+>
+  <div
+    className="pokemon-detail-component__backdrop"
+  />
+  <div
+    className="pokemon-detail-component__card"
+  >
+    <div
+      className="pokemon-detail-component__image"
+    >
+      <span
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "bottom": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": "initial",
+            "left": 0,
+            "margin": 0,
+            "opacity": 1,
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "width": "initial",
+          }
+        }
+      >
+        <img
+          alt="bulbasaur"
+          data-nimg="fill"
+          decoding="async"
+          draggable={false}
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          style={
+            Object {
+              "border": "none",
+              "bottom": 0,
+              "boxSizing": "border-box",
+              "display": "block",
+              "height": 0,
+              "left": 0,
+              "margin": "auto",
+              "maxHeight": "100%",
+              "maxWidth": "100%",
+              "minHeight": "100%",
+              "minWidth": "100%",
+              "objectFit": undefined,
+              "objectPosition": undefined,
+              "padding": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "width": 0,
+            }
+          }
+        />
+        <noscript>
+          <img
+            alt="bulbasaur"
+            data-nimg="fill"
+            decoding="async"
+            draggable={false}
+            loading="lazy"
+            sizes="100vw"
+            src="/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FPokeAPI%2Fsprites%2Fmaster%2Fsprites%2Fpokemon%2Fother%2Fdream-world%2F1.svg&w=3840&q=75"
+            srcSet="/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FPokeAPI%2Fsprites%2Fmaster%2Fsprites%2Fpokemon%2Fother%2Fdream-world%2F1.svg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FPokeAPI%2Fsprites%2Fmaster%2Fsprites%2Fpokemon%2Fother%2Fdream-world%2F1.svg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FPokeAPI%2Fsprites%2Fmaster%2Fsprites%2Fpokemon%2Fother%2Fdream-world%2F1.svg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FPokeAPI%2Fsprites%2Fmaster%2Fsprites%2Fpokemon%2Fother%2Fdream-world%2F1.svg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FPokeAPI%2Fsprites%2Fmaster%2Fsprites%2Fpokemon%2Fother%2Fdream-world%2F1.svg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FPokeAPI%2Fsprites%2Fmaster%2Fsprites%2Fpokemon%2Fother%2Fdream-world%2F1.svg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FPokeAPI%2Fsprites%2Fmaster%2Fsprites%2Fpokemon%2Fother%2Fdream-world%2F1.svg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FPokeAPI%2Fsprites%2Fmaster%2Fsprites%2Fpokemon%2Fother%2Fdream-world%2F1.svg&w=3840&q=75 3840w"
+            style={
+              Object {
+                "border": "none",
+                "bottom": 0,
+                "boxSizing": "border-box",
+                "display": "block",
+                "height": 0,
+                "left": 0,
+                "margin": "auto",
+                "maxHeight": "100%",
+                "maxWidth": "100%",
+                "minHeight": "100%",
+                "minWidth": "100%",
+                "objectFit": undefined,
+                "objectPosition": undefined,
+                "padding": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": 0,
+              }
+            }
+          />
+        </noscript>
+      </span>
+    </div>
+    <div
+      className="pokemon-detail-component__description"
+    >
+      <div
+        className="pokemon-detail-component__heading"
+      >
+        <h1>
+          bulbasaur
+           - #
+          001
+        </h1>
+      </div>
+      <div>
+        <h2>
+          Basic information
+        </h2>
+        <b>
+          Weight: 
+        </b>
+        <span>
+          50
+        </span>
+        <br />
+        <b>
+          Height: 
+        </b>
+        <span>
+          50
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
