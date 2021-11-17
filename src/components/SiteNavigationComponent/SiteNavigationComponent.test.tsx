@@ -1,11 +1,11 @@
 import { act, create } from "react-test-renderer";
-import { LoaderComponent } from "./LoaderComponent";
+import { SiteNavigationComponent } from "./SiteNavigationComponent";
 
-describe("LoaderComponent", () => {
+describe("SiteNavigationComponent", () => {
     it("snapshots", async () => {
         let root: ReturnType<typeof create> | undefined;
         act(() => {
-            root = create(<LoaderComponent />);
+            root = create(<SiteNavigationComponent />);
         });
         expect(root?.toJSON()).toMatchSnapshot();
     });

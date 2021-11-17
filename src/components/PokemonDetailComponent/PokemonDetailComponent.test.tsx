@@ -2,7 +2,7 @@ import { act, create } from "react-test-renderer";
 import { PokemonDetailComponent } from "./PokemonDetailComponent";
 import { Pokemon } from "../../types";
 
-describe(PokemonDetailComponent, () => {
+describe("PokemonDetailComponent", () => {
     it("snapshots", async () => {
         let root: ReturnType<typeof create> | undefined;
         const pokemon: Pokemon = {
