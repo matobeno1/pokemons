@@ -4,7 +4,7 @@ import Head from "next/head";
 import type { Pokemon } from "@src/types";
 import { fetchPokemonRequest, fetchPokemonsRequest } from "@src/requests";
 import { INTEGER_REGEX, POKEMONS_PRELOAD_COUNT } from "@src/constants";
-import { PokemonDetailComponent } from "@src/components";
+import { PokemonDetailComponent, LoaderComponent } from "@src/components";
 import { NextPageWithLayout } from "@src/types";
 import { navigationLayout } from "@src/layouts";
 
@@ -19,17 +19,18 @@ type PokemonDetailPageUrlQuery = {
 const PokemonDetailPage: NextPageWithLayout<PokemonDetailPageProps> = ({
     pokemon
 }) => pokemon ? (
-    <>
-        <Head >
-            <title>{pokemon.name}</title>
-            <style>
-                {`:root {--html-background-color: ${pokemon.color.name === "white" ? "gray" : pokemon.color.name} !important;}`}
-            </style>
-        </Head>
-        <PokemonDetailComponent pokemon={pokemon} />
-    </>
+        <LoaderComponent />
+    // <>
+    //     <Head >
+    //         <title>{pokemon.name}</title>
+    //         <style>
+    //             {`:root {--html-background-color: ${pokemon.color.name === "white" ? "gray" : pokemon.color.name} !important;}`}
+    //         </style>
+    //     </Head>
+    //     <PokemonDetailComponent pokemon={pokemon} />
+    // </>
 ) : (
-    <div>Loading...</div>
+    <LoaderComponent />
 );
 
 export const getStaticPaths: GetStaticPaths<PokemonDetailPageUrlQuery> = async () => {
