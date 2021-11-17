@@ -19,19 +19,16 @@ type PokemonDetailPageUrlQuery = {
 const PokemonDetailPage: NextPageWithLayout<PokemonDetailPageProps> = ({
     pokemon
 }) => pokemon ? (
-        <LoaderComponent />
-    // <>
-    //     <Head >
-    //         <title>{pokemon.name}</title>
-    //         <style>
-    //             {`:root {--html-background-color: ${pokemon.color.name === "white" ? "gray" : pokemon.color.name} !important;}`}
-    //         </style>
-    //     </Head>
-    //     <PokemonDetailComponent pokemon={pokemon} />
-    // </>
-) : (
-    <LoaderComponent />
-);
+    <>
+        <Head >
+            <title>{pokemon.name}</title>
+            <style>
+                {`:root {--html-background-color: ${pokemon.color.name === "white" ? "gray" : pokemon.color.name ?? "gray"} !important;}`}
+            </style>
+        </Head>
+        <PokemonDetailComponent pokemon={pokemon} />
+    </>
+) : <LoaderComponent />;
 
 export const getStaticPaths: GetStaticPaths<PokemonDetailPageUrlQuery> = async () => {
     const { data } = await fetchPokemonsRequest(POKEMONS_PRELOAD_COUNT);

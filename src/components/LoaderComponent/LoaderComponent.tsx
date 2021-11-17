@@ -7,6 +7,8 @@ const classNames = createClassNames("loader-component");
 
 export const LoaderComponent: FunctionComponent = () => (
     <div className={classNames()}>
-        <Image src="/pokeball.svg" layout="fill"/>
+        <div className={classNames("image")}>
+            <Image src="/pokeball.svg" layout="fill"/>
+        </div>
     </div>
 );
