@@ -7,3 +7,4 @@
 - The pokemon API doesn't provide Typescript types. For that reason, we need to store types
 locally in our codebase, which increses possibility of errors if the API changes. It would be much better if we had automatically
 generated types from the backend. Any API breaking change would be discovered at the compile time.
+- some elements should have better contrast

@@ -2,6 +2,7 @@ import { ReactElement, ReactNode } from "react";
 import { NextPage } from "next";
 import { AppProps } from "next/app";
 
+/** Type representing a pokemon. */
 export type Pokemon = {
     id: string;
     name: string;
@@ -12,12 +13,15 @@ export type Pokemon = {
     },
 };
 
+/** Type of a function used in pages to extend page with specific layout. */
 export type LayoutFunction = (page: ReactElement) => ReactNode;
 
+/** Augmented {@link NextPage} with `getLayout` function. */
 export type NextPageWithLayout<P = {}> = NextPage<P> & {
     getLayout?: LayoutFunction
 };
 
+/** Augmented {@link AppProps} */
 export type AppPropsWithLayout = AppProps & {
     Component: NextPageWithLayout
 };
