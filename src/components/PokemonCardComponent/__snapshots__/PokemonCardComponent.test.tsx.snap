@@ -7,6 +7,7 @@ exports[`PokemonCardComponent snapshots 1`] = `
 >
   <a
     className="pokemon-card-component"
+    role="link"
     tabIndex={0}
   >
     <div

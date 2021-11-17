@@ -10,6 +10,7 @@ exports[`SiteNavigationComponent snapshots 1`] = `
   >
     <a
       className="site-navigation-component__back"
+      role="link"
     >
       <span
         className="site-navigation-component__image"
