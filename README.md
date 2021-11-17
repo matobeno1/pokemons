@@ -28,3 +28,4 @@ the user is redirected to a detail page with the name of pokemon in the URL.
   and then using it for redirects without the need of fetching the name from external resource. 
 - Split CSS per page/component - at this moment there's one stylesheet with component's CSS.
   - possible to fix by using CSS modules.
+- Wording - "pokemons" is not a valid plural form.
