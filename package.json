@@ -25,6 +25,7 @@
     "@babel/preset-env": "7.16.4",
     "@babel/preset-react": "7.16.0",
     "@babel/preset-typescript": "7.16.0",
+    "@netlify/ipx": "^1.0.1",
     "@netlify/plugin-nextjs": "^4.2.7",
     "@types/invariant": "2.2.35",
     "@types/jest": "27.0.2",
