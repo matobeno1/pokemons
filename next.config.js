@@ -8,7 +8,7 @@ module.exports = {
         domains: [
             new URL(process.env.SPRITES_ROOT).host
         ],
-        formats: ["image/avif", "image/webp"],
+        formats: ["image/webp"],
     },
     redirects: async () => [
         {
