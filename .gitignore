@@ -40,4 +40,3 @@ yarn-error.log*
 
 cypress/videos
 *.mp4
-*.png

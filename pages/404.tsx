@@ -6,7 +6,7 @@ import { APP_TITLE } from "@src/constants";
 import { createClassNames } from "@src/bem";
 
 // import PokeballImage from "../public/pokeball.svg";
-import PokeballImage from "../public/pokeballimage.jpeg";
+import PokeballImage from "../public/pexeso.png";
 
 const classNames = createClassNames("page-404");
 
