@@ -5,6 +5,9 @@ import Image from "next/image";
 import { APP_TITLE } from "@src/constants";
 import { createClassNames } from "@src/bem";
 
+// import PokeballImage from "../public/pokeball.svg";
+import PokeballImage from "../public/pokeballimage.jpeg";
+
 const classNames = createClassNames("page-404");
 
 const NotFoundPage = () => (
@@ -17,7 +20,7 @@ const NotFoundPage = () => (
                 <div className={classNames("title-404")} aria-hidden="true">
                     <span className={classNames("letter")}>4</span>
                     <div className={classNames("image")}>
-                        <Image src="/pokeball.svg" layout="fill" alt="Poké Ball" />
+                        <Image src={PokeballImage} alt="Poké Ball" />
                     </div>
                     <span className={classNames("letter")}>4</span>
                 </div>
