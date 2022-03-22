@@ -26,7 +26,7 @@
     "@babel/preset-react": "7.16.0",
     "@babel/preset-typescript": "7.16.0",
     "@netlify/ipx": "^1.0.1",
-    "@netlify/plugin-nextjs": "^4.2.7",
+    "@netlify/plugin-nextjs": "latest",
     "@types/invariant": "2.2.35",
     "@types/jest": "27.0.2",
     "@types/lodash.upperfirst": "4.3.6",
