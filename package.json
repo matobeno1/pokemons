@@ -10,7 +10,8 @@
     "test:cypress": "start-server-and-test start http://localhost:3000 cypress",
     "test:cypress-headless": "start-server-and-test start http://localhost:3000 cypress:headless",
     "cypress": "cypress open",
-    "cypress:headless": "cypress run"
+    "cypress:headless": "cypress run",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@bem-react/classname": "1.5.12",
@@ -44,6 +45,7 @@
     "eslint-plugin-react": "7.27.0",
     "eslint-plugin-react-hooks": "4.3.0",
     "jest": "27.3.1",
+    "next-sitemap": "^2.5.14",
     "react-test-renderer": "17.0.2",
     "sass": "1.43.4",
     "start-server-and-test": "1.14.0",

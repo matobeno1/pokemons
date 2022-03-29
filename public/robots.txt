@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://silly-lichterman-cbcdf8.netlify.app
+
+# Sitemaps
+Sitemap: https://silly-lichterman-cbcdf8.netlify.app/sitemap.xml
